@@ -221,7 +221,7 @@ publications
     position:relative;
     margin-left:60px;
     margin-right: 60px;
-    padding:20px 60px 0px 0px;
+    padding:40px 60px 0px 0px;
 }
 
 .pub-content h4 {
@@ -255,7 +255,6 @@ media queries
     .pub-content{
         padding:80px 0 0;
     }
-
 }
 
 @media (max-width:767px) {
