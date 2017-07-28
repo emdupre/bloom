@@ -39,35 +39,6 @@ textarea {
 }
 
 /* ===========
-layout
-============= */
-#wrapper.boxed {
-    margin: 0 auto;
-    background-color: #fff;
-    
-}
-@media (max-width: 767px) {
-    #wrapper.boxed {
-        width: 100%;
-    }
-}
-@media (min-width: 768px) {
-    #wrapper.boxed {
-        width: 810px;
-    }
-}
-@media (min-width: 992px) {
-    #wrapper.boxed {
-        width: 1030px;
-    }
-}
-@media (min-width: 1200px) {
-    #wrapper.boxed {
-        width: 1230px;
-    }
-}
-
-/* ===========
 typography
 ============= */
 
@@ -114,21 +85,6 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-}
-
-/* ===========
-navbar
-============= */
-
-.navbar {
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba(255,255,255,.3);  
-
-}
-
-.navbar-toggle:focus,
-.navbar-toggle:active {
-    outline: 0;
 }
 
 /* ===========
@@ -220,7 +176,6 @@ publications
     background:#fff;
     position:relative;
     margin-left:60px;
-    margin-right: 60px;
     padding:40px 60px 0px 0px;
 }
 
@@ -253,7 +208,7 @@ media queries
     }
 
     .pub-content{
-        padding:80px 0 0;
+        margin-right: 60px;
     }
 }
 
@@ -264,7 +219,7 @@ media queries
         margin-top: 30px;
     }
     .pub-content{
-        margin-top:30px;
+        margin-right: 60px;
     }
 
     ul.social {
@@ -281,6 +236,7 @@ media queries
     }
 
     .pub-content {
+        margin-right: 0px;
         margin-top: 30px;
     }
 
@@ -293,6 +249,7 @@ media queries
     }
 
     .pub-content {
-        padding:60px 0 0;
+        margin-right: 0px;
+        padding:0 0 0;
     }
 }
