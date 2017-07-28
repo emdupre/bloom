@@ -90,6 +90,10 @@ a:focus {
 /* ===========
 misc elements
 ============= */
+br {
+    line-height: 5px;
+}
+
 hr {
   border-top: 1px solid #fafafa;
 }
