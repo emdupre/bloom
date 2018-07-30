@@ -3,7 +3,7 @@
 
         <b-navbar toggleable="md" type="light" variant="light">
           <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-          <b-navbar-brand href="/"> Elizabeth DuPre </b-navbar-brand>
+          <b-navbar-brand to="/" exact> Elizabeth DuPre </b-navbar-brand>
 
           <b-collapse is-nav id="nav_collapse">
             <!--  Here are links to different routes  -->
@@ -48,18 +48,19 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
         <footer>
-            <div class="navbar navbar-default bottom">
-                    <div class="text-center">
+            <div class="navbar navbar-default bottom"  id="text-center">
+                    <div>
                     <span class="copy-left"><a href="//copyleft.org/">©</a></span> Elizabeth DuPre 2018
                     </div>
             </div>
         </footer>
+
+        <div class="router"></div>
 
   </div>
 </template>
@@ -67,16 +68,19 @@
 <script>
 export default {
   name: 'app'
-}
+  }
 </script>
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#app {
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-} */
+}
+
+#text-center {
+    text-align: center;
+}
+
 </style>

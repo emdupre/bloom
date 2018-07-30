@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import cv from '@/components/cv'
+import pubs from '@/components/pubs'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
+      path: '/cv',
+      name: 'cv',
+      component: cv
+    },
+    {
+      path: '/pubs',
+      name: 'pubs',
+      component: pubs
+    },
   ]
 })

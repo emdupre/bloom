@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 require('../node_modules/academicons/css/academicons.min.css')
 require('../node_modules/font-awesome/css/font-awesome.min.css')
+require('../static/style.css')
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
@@ -16,7 +17,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  router
 })
