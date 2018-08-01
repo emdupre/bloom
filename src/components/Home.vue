@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
 
     <!-- Section: intro -->
     <div class="intro-content">
@@ -21,10 +21,10 @@
                     <div class="social">
                         <p>
                         <a href="//github.com/emdupre" title="Fork me on GitHub" class=github>
-                        <i class="fa fa-github fa-2x"></i></a>
+                        <i class="fab fa-github fa-2x"></i></a>
 
                         <a href="//twitter.com/emdupre_" title="Follow me on Twitter" class=twitter>
-                        <i class="fa fa-twitter fa-2x"></i></a>
+                        <i class="fab fa-twitter fa-2x"></i></a>
 
                         <a href="//orcid.org/0000-0003-1358-196X" title="View my ORCID profile" class=orcid>
                         <i class="ai ai-orcid ai-2x"></i></a>
@@ -40,3 +40,14 @@
 
   </div>
 </template>
+
+<script>
+export default {
+  name: 'home'
+}
+</script>
+
+<style>
+    @import '../assets/fontawesome/css/all.css';
+    @import '../assets/academicons/css/academicons.css';
+</style>

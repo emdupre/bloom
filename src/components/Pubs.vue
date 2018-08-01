@@ -1,5 +1,5 @@
 <template>
-  <div class="pubs">
+  <div id="Pubs">
 
       <div class="pub-content">
           <div class="row">
@@ -88,14 +88,10 @@
 </template>
 
 <script>
-import router from '../router'
-
+var embed = require('../assets/altmetricEmbed.js');
 export default {
-  name: 'pubs',
-  created() {
-      let altmetricScript = document.createElement('script')
-      altmetricScript.setAttribute('src', 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js')
-      document.head.appendChild(altmetricScript)
-    },
+  name: 'pubs'
 }
 </script>
+
+<style></style>
