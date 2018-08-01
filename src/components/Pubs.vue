@@ -88,9 +88,13 @@
 </template>
 
 <script>
-var embed = require('../assets/altmetricEmbed.js');
 export default {
-  name: 'pubs'
+  name: 'pubs',
+  created() {
+  let embedAltmetric = document.createElement('script')
+  embedAltmetric.setAttribute('src', 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js')
+  document.head.appendChild(embedAltmetric)
+  }
 }
 </script>
 
