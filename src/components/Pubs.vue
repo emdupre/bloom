@@ -98,4 +98,36 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+/* ===================================
+publications
+==================================== */
+.pub-content {
+    padding:60px 0 60px;
+}
+
+.pub-content {
+    background:transparent;
+    position:relative;
+    margin-left:60px;
+    padding:40px 60px 0px 0px;
+}
+
+.pub-content h4 {
+    margin-bottom: 10px;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.table > tbody > tr > td {
+    font-size: 16px;
+    vertical-align: middle;
+}
+</style>

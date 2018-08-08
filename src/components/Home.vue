@@ -50,4 +50,62 @@ export default {
 <style>
     @import '../assets/fontawesome/css/all.css';
     @import '../assets/academicons/css/academicons.css';
+
+    /* ===========================
+    --- intro
+    ============================ */
+
+    .intro {
+        width:100%;
+        position:relative;
+    }
+
+    .intro-content {
+        padding:60px 0 60px;
+    }
+
+    .intro-content.intro-nobg {
+        background:#fff;
+        position:relative;
+        margin:0;
+        padding:140px 0 60px;
+    }
+
+    .intro-content .img-fluid {
+      margin-bottom: 30px
+    }
+
+    .intro-content .slogan h2 {
+        margin-bottom: 30px;
+    }
+
+    /* ===========================
+    --- social
+    ============================ */
+
+    a.github:hover {
+        color:#000000
+    }
+
+    a.google:hover {
+        color:#4885ED
+    }
+
+    a.twitter:hover {
+        color:#0084FF
+    }
+
+    a.orcid:hover {
+        color:#A6CE39
+    }
+
+    a.resgate:hover {
+        color:#00CCBB
+    }
+
+    .collapse-container > :nth-child(even) {
+      display: none;
+      padding-left: 0.5rem;
+
+    }
 </style>
