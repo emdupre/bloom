@@ -4,7 +4,7 @@ This is the repository for my personal website: [emdupre.github.io](https://emdu
 
 > A Vue.js project
 
-Built using [Bootstrap4](https://v4-alpha.getbootstrap.com/), [Font Awesome](http://fontawesome.io/), and [Academicons](http://jpswalsh.github.io/academicons/).
+Built using [BootstrapVue](https://bootstrap-vue.js.org/), [Font Awesome](http://fontawesome.io/), and [Academicons](http://jpswalsh.github.io/academicons/).
 
 ## Build Setup
 
@@ -22,4 +22,6 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work,
+checkout the [guide](http://vuejs-templates.github.io/webpack/) and
+[docs for vue-loader](http://vuejs.github.io/vue-loader).
