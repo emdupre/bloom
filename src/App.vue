@@ -2,7 +2,7 @@
   <div id="app">
     <b-navbar toggleable="md" type="light" variant="light">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand to="/" exact> Elizabeth DuPre </b-navbar-brand>
+      <b-navbar-brand to="/" exact> Your Name </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
         <!--  Here are links to different routes  -->
@@ -22,7 +22,7 @@
         <div class="fluid-container footer">
           <p class="text-center">
             <span class="copy-left"><a href="//copyleft.org/">©</a></span>
-             Elizabeth DuPre 2019
+             Your Name 2019
           </p>
         </div>
     </footer>
