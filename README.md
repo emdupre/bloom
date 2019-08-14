@@ -1,6 +1,13 @@
-# emdupre.github.io
+# bloom :hibiscus:
 
-This is the repository for my personal website: [emdupre.github.io](https://emdupre.github.io/)
+🚧 This repository is currently under construction 🚧
+
+Please check back soon.
+
+---
+
+This (will be) a template repository for an academic website,
+where your publications are automatically populated from an [ORCID](https://orcid.org/about).
 
 > A Vue.js project
 
