@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <b-list-group>
+      <b-list-group v-if="pub">
         <div class="d-flex justify-content-between align-items-center">
           <a class="mb-1" :href="pub['url']['value']" target="_blank">
             {{ pub['title']['title']['value'] }}
@@ -9,11 +9,9 @@
           <small>{{ pub['publication-date']['year']['value'] }}</small>
         </div>
         <div>
-          <p>
-            <p v-for="author in authorList">
-                
-            </p>
-          </p>
+            <span v-for="author in authorList">
+                  {{ author['given'].charAt(0) }} {{ author['family'] }},
+            </span>
         </div>
         <div>
         <p v-if="pub['journal-title']" class="mb-1">
@@ -43,6 +41,8 @@ export default {
   },
   mounted() {
     this.getCrossref(this.doi);
+    // Check DOI properly passed to child component
+    // console.log(this.doi);
   },
   methods: {
     getCrossref(doi) {
@@ -53,7 +53,7 @@ export default {
       fetch(`https://api.crossref.org/works/${doi}`, options)
       .then((resp) => resp.json())
       .then(data => {
-        // console.log(data.message.author);
+        console.log(data.message.author);
         this.authorList = data.message.author;
         this.loading = false;
       });

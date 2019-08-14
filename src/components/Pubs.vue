@@ -8,11 +8,13 @@
       <!-- <div v-else> -->
         <b-list-group>
           <b-list-group-item v-for="work in works"
-                             :set="pub = work['work-summary'][0]"
+                             vbind:key="work['work-summary'][0]['display-index']"
                              class="flex-column align-items-start">
-
-            <PubItem :doi={{ pub['external-ids']['external-id'][0]['external-id-value'] }}>
+            <PubItem
+            :pub="work['work-summary'][0]"
+            :doi="work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value']">
             </PubItem>
+            <!-- <h3> {{ work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'] }} </h3> -->
           </b-list-group-item>
         </b-list-group>
       <!-- </div> -->
@@ -53,7 +55,7 @@ export default {
         this.works = data.group;
         this.loading = false;
         // Check if a DOI is available:
-        // console.log(this.works[0]['work-summary'][0]['external-ids']['external-id'][0]['external-id-type'])
+        console.log(this.works[0]['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'])
         return this.works;
       });
     }
