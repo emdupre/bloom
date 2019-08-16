@@ -1,11 +1,10 @@
 <template>
   <div id="Pubs" class="pub-content">
     <ul>
-      <!-- Lot of problems with the spinner D:  -->
-      <!-- <div v-if="loading" class="align-items-center">
-        <b-spinner type="grow" variant="info"></b-spinner>
-      </div> -->
-      <!-- <div v-else> -->
+      <div v-if="loading" class="d-flex justify-content-center mb-3">
+        <b-spinner variant="primary"></b-spinner>
+      </div>
+      <div v-else>
         <b-list-group>
           <b-list-group-item v-for="work in works"
                              vbind:key="work['work-summary'][0]['display-index']"
@@ -17,7 +16,7 @@
             <!-- <h3> {{ work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'] }} </h3> -->
           </b-list-group-item>
         </b-list-group>
-      <!-- </div> -->
+      </div>
     </ul>
   </div>
 </template>
@@ -55,7 +54,7 @@ export default {
         this.works = data.group;
         this.loading = false;
         // Check if a DOI is available:
-        console.log(this.works[0]['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'])
+        // console.log(this.works[0]['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'])
         return this.works;
       });
     }
