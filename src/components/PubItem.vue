@@ -2,6 +2,8 @@
   <div>
     <ul>
       <b-list-group v-if="pub">
+        <b-row>
+        <b-col cols="11">
         <div class="d-flex justify-content-between align-items-center">
           <a class="mb-1" :href="pub['url']['value']" target="_blank">
             {{ pub['title']['title']['value'] }}
@@ -9,9 +11,9 @@
           <small>{{ pub['publication-date']['year']['value'] }}</small>
         </div>
         <div>
-            <span v-for="author in authorList">
-                  {{ author['given'].charAt(0) }} {{ author['family'] }},
-            </span>
+          <span v-for="author in authorList">
+                {{ author['given'].charAt(0) }} {{ author['family'] }},
+          </span>
         </div>
         <div>
         <p v-if="pub['journal-title']" class="mb-1">
@@ -21,6 +23,17 @@
           <small>Preprint</small>
         </p>
         </div>
+        </b-col>
+        <b-col cols="1">
+          <div>
+          <span class="__dimensions_badge_embed__"
+            :data-doi="doi"
+            data-style="small_circle"
+            data-hide-zero-citations="true">
+          </span>
+          </div>
+        </b-col>
+        </b-row>
       </b-list-group>
     </ul>
   </div>
@@ -43,6 +56,9 @@ export default {
     this.getCrossref(this.doi);
     // Check DOI properly passed to child component
     // console.log(this.doi);
+    let dimensionScript = document.createElement('script')
+    dimensionScript.setAttribute('src', 'https://badge.dimensions.ai/badge.js')
+    document.head.appendChild(dimensionScript)
   },
   methods: {
     getCrossref(doi) {
@@ -55,7 +71,7 @@ export default {
       .then(data => {
         console.log(data.message.author);
         this.authorList = data.message.author;
-        this.loading = false;
+        // this.$emit('loading', 'false')
       });
     }
   },
