@@ -11,7 +11,7 @@
           <small>{{ pub['publication-date']['year']['value'] }}</small>
         </div>
         <div>
-          <span v-for="author in authorList">
+          <span v-for="author in authorList" v-bind:style="styleAuthor(author)">
                 {{ author['given'].charAt(0) }} {{ author['family'] }},
           </span>
         </div>
@@ -69,10 +69,18 @@ export default {
       fetch(`https://api.crossref.org/works/${doi}`, options)
       .then((resp) => resp.json())
       .then(data => {
-        console.log(data.message.author);
+        // console.log(data.message.author);
         this.authorList = data.message.author;
         // this.$emit('loading', 'false')
       });
+    },
+    styleAuthor(author) {
+      var style = {};
+      if (author['family'] == 'DuPre') {
+        style.color = 'black',
+        style.textDecoration = 'underline'
+      }
+      return style;
     }
   },
 };
