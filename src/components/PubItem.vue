@@ -8,7 +8,6 @@
           <a class="mb-1" :href="pub['url']['value']" target="_blank">
             {{ pub['title']['title']['value'] }}
           </a>
-          <small>{{ pub['publication-date']['year']['value'] }}</small>
         </div>
         <div>
           <span v-for="(author, index) in authorList" v-bind:key="index"
@@ -18,10 +17,10 @@
         </div>
         <div>
         <p v-if="pub['journal-title']" class="mb-1">
-          <small>{{ pub['journal-title']['value'] }}</small>
+          <small>{{ pub['journal-title']['value'] }} ({{ pub['publication-date']['year']['value'] }})</small>
         </p>
         <p v-else class="mb-1">
-          <small>Preprint</small>
+          <small>Preprint ({{ pub['publication-date']['year']['value'] }})</small>
         </p>
         </div>
         </b-col>
