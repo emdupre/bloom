@@ -11,8 +11,9 @@
           <small>{{ pub['publication-date']['year']['value'] }}</small>
         </div>
         <div>
-          <span v-for="author in authorList" v-bind:style="styleAuthor(author)">
-                {{ author['given'].charAt(0) }} {{ author['family'] }},
+          <span v-for="(author, index) in authorList" v-bind:key="index"
+                                                            :style="styleAuthor(author)">
+            {{ author['given'].charAt(0) }} {{ author['family'] }}{{ index == authorList.length - 1 ? '.': ',' }}
           </span>
         </div>
         <div>
