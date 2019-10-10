@@ -10,10 +10,10 @@
           </a>
         </div>
         <div>
-          <span v-for="(author, index) in authorList" v-bind:key="index"
-                                                            :style="styleAuthor(author)">
-            {{ author['given'].charAt(0) }} {{ author['family'] }}{{ index == authorList.length - 1 ? '.': ',' }}
-          </span>
+          <template v-for="(author, index) in authorList">
+            <span v-bind:key="index" :style="styleAuthor(author)">{{ author['given'].charAt(0) }} {{ author['family'] }}</span><!--
+            --><span v-bind:key="index" >{{ index == authorList.length - 1 ? '.': ', ' }}</span>
+          </template>
         </div>
         <div>
         <p v-if="pub['journal-title']" class="mb-1">
