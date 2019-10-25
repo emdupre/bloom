@@ -1,42 +1,38 @@
 <template>
-  <div>
-    <ul>
-      <b-list-group v-if="pub">
-        <b-row>
-        <b-col cols="11">
-        <div class="d-flex justify-content-between align-items-center">
-          <a class="mb-1" :href="pub['url']['value']" target="_blank">
-            {{ pub['title']['title']['value'] }}
-          </a>
-        </div>
-        <div>
-          <template v-for="(author, index) in authorList">
-            <span v-bind:key="index" :style="styleAuthor(author)">{{ author['given'].charAt(0) }} {{ author['family'] }}</span><!--
-            --><span v-bind:key="index" >{{ index == authorList.length - 1 ? '.': ', ' }}</span>
-          </template>
-        </div>
-        <div>
-        <p v-if="pub['journal-title']" class="mb-1">
-          <small>{{ pub['journal-title']['value'] }} ({{ pub['publication-date']['year']['value'] }})</small>
-        </p>
-        <p v-else class="mb-1">
-          <small>Preprint ({{ pub['publication-date']['year']['value'] }})</small>
-        </p>
-        </div>
-        </b-col>
-        <b-col cols="1">
-          <div>
-          <span class="__dimensions_badge_embed__"
-            :data-doi="doi"
-            data-style="small_circle"
-            data-hide-zero-citations="true">
-          </span>
-          </div>
-        </b-col>
-        </b-row>
-      </b-list-group>
-    </ul>
-  </div>
+  <b-list-group v-if="pub">
+    <b-row align-h="between">
+    <b-col cols="10">
+    <div class="d-flex justify-content-between">
+      <a class="mb-1" :href="pub['url']['value']" target="_blank">
+        {{ pub['title']['title']['value'] }}
+      </a>
+    </div>
+    <div>
+      <template v-for="(author, index) in authorList">
+        <span v-bind:key="index" :style="styleAuthor(author)">{{ author['given'].charAt(0) }} {{ author['family'] }}</span><!--
+        --><span>{{ index == authorList.length - 1 ? '.': ', ' }}</span>
+      </template>
+    </div>
+    <div>
+    <p v-if="pub['journal-title']" class="mb-1">
+      <small>{{ pub['journal-title']['value'] }} ({{ pub['publication-date']['year']['value'] }})</small>
+    </p>
+    <p v-else class="mb-1">
+      <small>Preprint ({{ pub['publication-date']['year']['value'] }})</small>
+    </p>
+    </div>
+    </b-col>
+    <b-col cols="2" align-self="center">
+      <div class="d-flex float-right">
+      <span class="__dimensions_badge_embed__"
+        :data-doi="doi"
+        data-style="small_circle"
+        data-hide-zero-citations="true">
+      </span>
+      </div>
+    </b-col>
+    </b-row>
+  </b-list-group>
 </template>
 
 <script>
@@ -69,13 +65,11 @@ export default {
       fetch(`https://api.crossref.org/works/${doi}`, options)
       .then((resp) => resp.json())
       .then(data => {
-        // console.log(data.message.author);
         this.authorList = data.message.author;
-        // this.$emit('loading', 'false')
       });
     },
     styleAuthor(author) {
-      var style = {};
+      var style = {}; // Replace with your own family name !
       if (author['family'] == 'DuPre') {
         style.color = 'black',
         style.textDecoration = 'underline'
@@ -87,16 +81,4 @@ export default {
 </script>
 
 <style>
-/* ===================================
-publications
-==================================== */
-.pub-content {
-    background:transparent;
-    position:relative;
-    margin-left:60px;
-    margin-bottom: 10px;
-    /* padding:60px 0 60px; */
-    padding:40px 60px 0px 0px;
-}
-
 </style>

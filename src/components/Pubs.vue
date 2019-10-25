@@ -1,23 +1,19 @@
 <template>
-  <div id="Pubs" class="pub-content">
-    <ul>
-      <div v-if="loading" class="d-flex justify-content-center mb-3">
-        <b-spinner variant="primary"></b-spinner>
+  <div id="Pubs">
+    <div v-if="loading" class="d-flex justify-content-center mb-3">
+      <b-spinner variant="primary"></b-spinner>
+    </div>
+    <div v-else class="container-fluid pub-content">
+      <h3>Journal Articles</h3>
+      <b-list-group>
+        <b-list-group-item v-for="(work, index) in works" :key="index">
+          <PubItem
+          :pub="work['work-summary'][0]"
+          :doi="work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value']">
+          </PubItem>
+        </b-list-group-item>
+      </b-list-group>
       </div>
-      <div v-else>
-        <b-list-group>
-          <b-list-group-item v-for="work in works"
-                             vbind:key="work['work-summary'][0]['display-index']"
-                             class="flex-column align-items-start">
-            <PubItem
-            :pub="work['work-summary'][0]"
-            :doi="work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value']">
-            </PubItem>
-            <!-- <h3> {{ work['work-summary'][0]['external-ids']['external-id'][0]['external-id-value'] }} </h3> -->
-          </b-list-group-item>
-        </b-list-group>
-      </div>
-    </ul>
   </div>
 </template>
 
@@ -69,9 +65,8 @@ publications
 .pub-content {
     background:transparent;
     position:relative;
-    margin-left:60px;
+    margin-left:10px;
     margin-bottom: 10px;
-    /* padding:60px 0 60px; */
     padding:40px 60px 0px 0px;
 }
 
